@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Ruiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'EB Garamond', serif;
+            background-image: url('https://raw.githubusercontent.com/Ruizr0lene/My-website/refs/heads/main/gaembg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .nav {
+            background-color: rgb(66, 29, 29);
+            border-bottom: 6px solid #7e694a;
+            border-top: 6px solid #7e694a;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.8);
+            text-align:center;
+            padding:14px 0;
+            z-index: 20;
+        }
+
+        .nav a {
+            color:#736043;
+            text-decoration:none;
+            margin:0 20px;
+            font-family:'Cinzel Decorative', serif;
+            font-size:18px;
+            font-weight:700;
+        }
+
+        .nav a:hover {
+            color:#d4b484;
+            text-shadow:0 0 8px #d4af37;
+        }
+
+        .middle-text {
+            max-width: 915px;
+            margin: 20px auto 10px auto;
+            padding: 10px;
+            background-color: rgba(102, 34, 40, 0.9);
+            color: #d3d3d3;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.1rem;
+            text-align: center;
+            border: 6px solid #736043;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.8);
+            border-radius: 0;
+        }
+
+        /* Middle container for slideshow */
+        .middle {
+            max-width: 915px;
+            margin: 10px auto 60px auto;
+            border: 6px solid #736043;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.8);
+            background-color: #662228;
+            border-radius: 0;
+            text-align: center;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .middle img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+        }
+
+        .footer {
+            background-color: rgb(66, 29, 29);
+            border-top: 6px solid #736043;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+            box-shadow: 0px -8px 25px rgba(0,0,0,0.8);
+            color: #d4b484;
+        }
+
+        /* Bronze scrollbar for side panel if needed in future */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgb(66, 29, 29);
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #7e694a;
+            border: 2px solid rgb(66, 29, 29);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #d4b484;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="books.html">Books</a>
+        <a href="games.html">Games</a>
+        <a href="music.html">Music</a>
+    </div>
+
+    <!-- Intro Blurb -->
+    <div class="middle-text">
+        <p>These are a few of my favorite games from FromSoftware! Check them out!</p>
+    </div>
+
+    <!-- Slideshow -->
+    <div class="middle">
+        <img src="https://raw.githubusercontent.com/Ruizr0lene/My-website/refs/heads/main/frmsft.jpg" alt="FromSoftware Logo" class="slideshow">
+        <img src="https://raw.githubusercontent.com/Ruizr0lene/My-website/refs/heads/main/drksouls.jpg" alt="Dark Souls" class="slideshow" style="display:none;">
+        <img src="https://raw.githubusercontent.com/Ruizr0lene/My-website/refs/heads/main/elden.jpg" alt="Elden Ring" class="slideshow" style="display:none;">
+        <img src="https://raw.githubusercontent.com/Ruizr0lene/My-website/refs/heads/main/bldborne.jpg" alt="Bloodborne" class="slideshow" style="display:none;">
+    </div>
+
+    <div class="footer">
+        <h4>By: Rolene Alexa G. Ruiz</h4>
+    </div>
+
+    <script>
+        // Simple slideshow
+        let slides = document.querySelectorAll('.slideshow');
+        let current = 0;
+        setInterval(() => {
+            slides[current].style.display = 'none';
+            current = (current + 1) % slides.length;
+            slides[current].style.display = 'block';
+        }, 3000);
+    </script>
+
+</body>
+</html>
